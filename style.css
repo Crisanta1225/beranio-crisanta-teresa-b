@@ -1,0 +1,365 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'KyivType Titling';
+  src: url('https://db.onlinewebfonts.com/t/1c7a4d85137bb329effaa631ffd183c5.woff2') format('woff2'),
+       url('https://db.onlinewebfonts.com/t/1c7a4d85137bb329effaa631ffd183c5.woff') format('woff'),
+       url('https://db.onlinewebfonts.com/t/1c7a4d85137bb329effaa631ffd183c5.ttf') format('truetype');
+}
+
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: url('ako.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  height: 100vh;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 80px 1fr;
+  width: 100%;
+  height: 100vh;
+  border: 5px solid #fff;
+}
+
+
+.header {
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  border-bottom: 3px solid #fff;
+  padding: 15px;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Holtwood One SC', serif;
+  color: #870995;
+  -webkit-text-stroke: 1px #fff;
+  text-shadow: 2px 2px 2px #000;
+}
+
+
+.sidebar {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: rgba(0,0,0,0.4);
+  border-right: 5px solid #fff;
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+  display: block;
+  background: #ffffff;
+  padding: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 30px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Holtwood One SC', serif;
+  -webkit-text-stroke: 0.8px #a432b6;
+  text-shadow: 1px 1px 2px #000;
+  transition: all 0.3s ease;
+}
+
+
+.sidebar ul li a:hover {
+  background: #a432b6;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #fff;
+}
+
+
+.content {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 30px;
+  padding: 40px;
+  border-left: 5px solid #fff;
+}
+
+.profile-pic img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.intro-text p {
+  font-family: 'KyivType Titling', sans-serif;
+  font-size: 22px;
+  color: rgba(188, 120, 255, 1);
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.intro-text h1 {
+  font-family: 'Krona One', sans-serif;
+  font-size: 34px;
+  text-transform: uppercase;
+  color: rgba(188, 120, 255, 1);
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 2px 2px 3px #000;
+}
+
+.intro-text h2 {
+  font-family: 'Kumar One';
+  font-size: 28px;
+  text-transform: uppercase;
+  color: rgba(188, 120, 255, 1);
+  -webkit-text-stroke: 1px #fff;
+}
+
+
+@media (max-width: 600px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    min-height: 100vh; 
+    width: 100%;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .header {
+    font-size: 23px;
+    padding: 5px;
+    border-bottom: 2px solid #fff;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    border: none;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    width: 100%;
+  }
+
+  .sidebar ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .sidebar ul.show {
+    display: flex;
+  }
+
+  .sidebar ul li {
+    width: 100%;
+  }
+
+  .sidebar ul li a {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    text-align: left;
+    padding: 40px 20px;
+    border: none;
+    border-top: 3px solid #fff;
+    width: 100%;
+    flex-grow: 1; 
+  }
+
+  .profile-pic {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+  }
+
+  .profile-pic img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .intro-text {
+    margin-left: 20px;
+  }
+
+  .intro-text h1 {
+    font-size: 22px;
+  }
+
+  .intro-text h2 {
+    font-size: 21px;
+  }
+
+  .intro-text p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .header {
+    font-size: 30px;
+  }
+
+  .sidebar {
+    border: none;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+  }
+
+  .sidebar ul li a {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    padding: 25px;
+    text-align: center;
+  }
+
+  .profile-pic img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .intro-text h1 {
+    font-size: 26px;
+  }
+
+  .intro-text h2 {
+    font-size: 23px;
+  }
+
+  .intro-text p {
+    font-size: 22px;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 80px 1fr;
+  }
+
+  .header {
+    font-size: 30px;
+  }
+
+  .sidebar ul li a {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+    padding: 30px;
+  }
+
+  .profile-pic img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .intro-text h1 {
+    font-size: 28px;
+  }
+
+  .intro-text h2 {
+    font-size: 20px;
+  }
+
+  .intro-text p {
+    font-size: 18px;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .grid-container {
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 80px 1fr;
+    height: 100vh;
+  }
+
+  .header {
+    font-size: 30px;
+  }
+
+  .sidebar {
+    border-right: 5px solid #fff;
+  }
+
+  .sidebar ul li a {
+    font-size: 18px;
+    padding: 18px 22px;
+  }
+
+  .content {
+    grid-template-columns: 1fr 2fr;
+    padding: 40px;
+  }
+
+  .profile-pic img {
+    width: 320px;
+    height: 320px;
+  }
+
+  .intro-text h1 {
+    font-size: 36px;
+  }
+
+  .intro-text h2 {
+    font-size: 30px;
+  }
+
+  .intro-text p {
+    font-size: 24px;
+  }
+}

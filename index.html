@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Holtwood+One+SC&family=Krona+One&family=Kumar+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grid-container">
+    <header class="header">
+      MY PORTFOLIO
+    </header>
+
+    <nav class="sidebar">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <div class="profile-pic">
+        <img src="MYPICTURE.jpeg" alt="Profile Picture">
+      </div>
+      <div class="intro-text">
+        <p>Hi it’s me</p>
+        <h1>CRISANTA TERESA B. BERANIO</h1>
+        <h2>BSINT STUDENT</h2>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
